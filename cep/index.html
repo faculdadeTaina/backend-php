@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link  rel="stylesheet"  href="./style.css">
+    <title>App cep</title>
+</head>
+<script>
+    //estudnao sobre ajax
+    function getDadosEnderecoPorCep(cep){
+      //  console.log(cep)
+      let url = 'https://viacep.com.br/ws/'+cep+'/json/'
+
+
+  //let url='https://viacep.com.br/ws/'+cep+'/json/unicode/';
+ //console.log(url)
+ //https://viacep.com.br/ws/01001000/json/
+
+ let xmlHttp=new XMLHttpRequest()
+
+ xmlHttp.open('GET',url)
+
+xmlHttp.onreadystatechange=()=>{
+if(xmlHttp.readyState==4 && xmlHttp.status==200){
+  let dadosJsonTExt=  xmlHttp.responseText
+let dadsoJsonObj=JSON.parse(dadosJsonTExt)
+
+console.log(dadsoJsonObj)
+//coloando valor da api nas tags hmtl
+document.getElementById('endereco').value=dadsoJsonObj.logradouro
+document.getElementById('bairro').value=dadsoJsonObj.bairro
+document.getElementById('cidade').value=dadsoJsonObj.cidade
+document.getElementById('uf').value=dadsoJsonObj.uf
+
+
+}
+}
+
+ xmlHttp.send()
+ }
+</script>
+<body>
+    <h2>Endereço</h2>
+    <p>Ao preencher o cep suas informações serão colocadas no input</p>
+<form>
+    <input type="text" placeholder="Cep"
+     onblur="getDadosEnderecoPorCep(this.value)" 
+     />
+    <input type="text" 
+    placeholder="Endereço"
+    id="endereco"
+     readonly/>
+
+    <input type="text"
+     placeholder="Bairro"  
+     id="bairro"
+    readonly/>
+    <input type="text"
+     placeholder="Cidade" 
+     id="cidade"
+     readonly/>
+   <input type="text" 
+   placeholder="UF" 
+   id="uf"
+    readonly/>
+  </form>
+</body>
+</html>

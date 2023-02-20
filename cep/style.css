@@ -1,0 +1,22 @@
+form{
+    margin:auto;
+    width: 50%;
+   
+  
+}
+p, h2{
+    text-align: center;
+    color:blue;
+}
+input{
+   width: 90%;
+    margin:5px;
+    padding: 10px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px blue;
+    color:blue;
+    margin-bottom: 10px;
+}
