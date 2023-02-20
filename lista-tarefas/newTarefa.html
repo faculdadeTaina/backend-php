@@ -8,8 +8,12 @@
 </head>
 <body>
     <h2>Adicione uma nova tarefa</h2>
-    <form method="post">
-        <input type="text" placeholder="Informe qual é a tarefa">
+    <form method="post" action="./controller/tarefaController.php">
+        <label>Tarefa</label>
+        <input type="text"
+         placeholder="Informe qual é a tarefa"
+         name="tarefa"
+        >
         <button>Cadastrar</button>
     </form>
 </body>

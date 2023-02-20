@@ -6,7 +6,19 @@ class Conexao{
     private $senha ='';
     
     public function conectar(){
+//conecando com pdo e fazendo tratamento de erros
+try{
+$conexao=new PDO(
+"mysql:host=$this->host;dbname=$this->dbname",
+"$this->user",
+"$this->senha"
+);
 
+return $conexao;
+
+}catch (PDOException $e){
+    echo '<p>'.$e->getMessage().'</p>';
+}
     }
 }
 
