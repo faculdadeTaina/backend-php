@@ -1,4 +1,5 @@
 <?php
+print "-pagina de conexão";
 class Conexao{
     private $host ='localhost';
     private $dbname ='lista_tarefas';
