@@ -1,3 +1,9 @@
+<?php
+$acao='recuperar';
+
+require './controller/tarefaController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +15,7 @@
 <body>
     
   <h2>Lista de tarefas</h2>
-  <p>Todas as tarefas</p>
+  <p>Todas as tarefas:</p>
+
 </body>
 </html>

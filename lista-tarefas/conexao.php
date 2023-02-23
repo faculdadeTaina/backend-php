@@ -1,5 +1,6 @@
 <?php
-print "-pagina de conexão";
+
+print_r ("-pagina de conexão");
 class Conexao{
     private $host ='localhost';
     private $dbname ='lista_tarefas';
@@ -14,11 +15,12 @@ $conexao=new PDO(
 "$this->user",
 "$this->senha"
 );
-
+echo   'nos estamos nos conectando' ;
 return $conexao;
 
 }catch (PDOException $e){
-    echo '<p>'.$e->getMessage().'</p>';
+    echo 'conetou nada, deu ruim'.$e->getCode().'Mesagem:'.$e->getMessage();
+
 }
     }
 }

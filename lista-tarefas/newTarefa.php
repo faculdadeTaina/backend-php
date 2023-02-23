@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,13 +9,16 @@
 </head>
 <body>
     <h2>Adicione uma nova tarefa</h2>
-    <form method="post" action="./controller/tarefaController.php">
+    <form method="post"
+     action="./controller/tarefaController.php?acao=inserir">
         <label>Tarefa</label>
         <input type="text"
          placeholder="Informe qual é a tarefa"
          name="tarefa"
+         id="tarefa"
         >
         <button>Cadastrar</button>
     </form>
 </body>
 </html>
+

@@ -1,5 +1,5 @@
 <?php
-print_r("pagina contorle-");
+print_r("-pagina contorle-");
 //crud com pdo
 class TarefaService{
     private $conexao;
@@ -10,6 +10,7 @@ class TarefaService{
         $this->tarefa=$tarefa;
     }
     public function inserir(){
+
 $query='insert into tb_tarefas(tarefa)values(:tarefa)';
 $stmt=$this->conexao->prepare($query);
 $stmt->bindValue(':tarefa',$this->tarefa->__get('tarefa'));
